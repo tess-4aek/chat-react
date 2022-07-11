@@ -14,7 +14,7 @@ const Loader = () => {
                     alignItems={"center"}
                     direction={"column"}
                 >
-                    <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                    <div className="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 </Grid>
             </Grid>
         </Container>
