@@ -19,7 +19,7 @@ const Login = () => {
                 alignItems={"center"}
                 justifyContent={"center"}
             >
-                <Grid style={{ width: 400, background: 'lightgray' }}
+                <Grid style={{ width: 300, background: '#a6d4fa', borderRadius: '5px' }}
                     container
                     alignItems={"center"}
                     direction={"column"}

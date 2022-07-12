@@ -10,9 +10,12 @@ const Navbar = () => {
     const [user] = useAuthState(auth);
 
     return (
-        <AppBar color={"secondary"} position="static">
+        <AppBar style={{background: '#a6d4fa'}} position="static">
             <Toolbar variant={"dense"}>
-                <Grid container justifyContent={"flex-end"}>
+                <Grid container justifyContent={"space-between"}>
+                    <div className='logo'>
+                        Chat-R
+                    </div>
                     {user ?
                         <Button onClick={() => auth.signOut()} variant={"outlined"}>Logout</Button>
                         :

@@ -34,21 +34,30 @@ const Chat = () => {
             <Grid
                 container
                 justifyContent={"center"}
+                alignItems={"center"}
+                direction={"column"}
                 style={{ height: window.innerHeight - 48, paddingTop: 20 }}>
-                <div style={{ width: '80%', height: '70vh', border: '1px solid gray', overflowX: 'auto' }}>
+                <div style={{ width: '300px', height: '70vh',  overflowX: 'auto', backgroundImage: 'url(img/chatBg.jpg)', backgroundPosition: 'center', backgroundSize: 'cover' }}>
                     {messages.map(message =>
                         <div style={{
+                            width: 'fit-content',
                             margin: 10,
-                            padding: 5,
-                            border: user.uid === message.uid ? '2px solid green' : '2px dashed red',
-                            marginLeft: user.uid === message.uid ? 'auto' : '10px',
-                            width: 'fit-content'
+                            marginLeft: user.uid === message.uid ? 'auto' : '10px'
                         }}>
-                            <Grid container>
-                                <Avatar src={message.photoURL} />
+                            <Grid container alignItems={'center'}>
+                                <Avatar style={{ marginRight: '5px' }} src={message.photoURL} />
                                 <div>{message.displayName}</div>
                             </Grid>
-                            <div>{message.text}</div>
+                            <div style={{
+                                padding: 5,
+                                width: 'fit-content',
+                                borderRadius: '10px',
+                                background: user.uid === message.uid ? '#81c784' : '#e57373',
+                                marginLeft: user.uid === message.uid ? 'auto' : '0px',
+                                marginTop: '10px'
+                            }}>
+                                {message.text}
+                            </div>
                         </div>
                     )}
                 </div>
@@ -56,19 +65,20 @@ const Chat = () => {
                     container
                     direction={"column"}
                     alignItems={"flex-end"}
-                    style={{ width: '80%' }}
+                    style={{ width: '300px', marginTop: '10px' }}
                 >
                     <TextField
+                    
                         fullWidth
                         maxRows={2}
                         variant={"outlined"}
                         value={value}
                         onChange={e => setValue(e.target.value)}
                     />
-                    <Button onClick={sendMessage} variant={"outlined"}>Send</Button>
+                    <Button onClick={sendMessage} style={{padding: '5px 25px', marginTop: '10px', border: 'none', borderRadius: '20px' ,color: 'black', background: '#a6d4fa'}}>Send</Button>
                 </Grid>
             </Grid>
-        </Container>
+        </Container >
     );
 };
 
